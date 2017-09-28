@@ -16,12 +16,17 @@ public class Palindrome {
 				"goof", "bar", "toot", "a", "Able was I ere I saw Elba", "amanaplanacanalpanama",
 				"bootcalllactoob", "trulalurt", "2002", "1444", "to", "oo"};
 		
+		
+		testPalindrome(5);
+		
 		testPalindrome(expressions);
+		
 		
 	}
 	
-	/*
+	/**
 	 * Boolean method returns true if a word is spelled the same way backwards as it is spelled forwards
+	 * @param expr
 	 */
 	
 	public static boolean isaPalindrome(String expr) {
@@ -46,11 +51,13 @@ public class Palindrome {
 	}
 	
 	
-	/*
+	/**
 	 * Loops through an array of possible palindromes to tell user if each word is a palindrome or not
+	 * @param tests
 	 */
 	
 	public static void testPalindrome(String[] tests) {
+		System.out.println("Here are some more palindromes that we tested for you!");
 		for (String s: tests) {
 			if (isaPalindrome(s)) {
 				System.out.println(s + " is a palindrome!");		//prints to user if a word is a palindrome
@@ -60,6 +67,37 @@ public class Palindrome {
 
 			}
 		}
+	}
+	
+	/**
+	 * Lets the user know if a String is a palindrome
+	 * @param s
+	 */
+	public static void testPalindrome(String s) {
+			if (isaPalindrome(s)) {
+				System.out.println(s + " is a palindrome!");		//prints to user if a word is a palindrome
+			}
+			else {
+				System.out.println(s + " is NOT a palindrome!");	//prints to user if a word is not a palindrome
+
+			}
+	}
+	
+	/**
+	 * Solicits user for n number of strings and checks each one individually to see if it is a palindrome
+	 * @param n
+	 */
+	public static void testPalindrome(int n) {
+		Scanner board = new Scanner(System.in);
+		System.out.println("Give me " + n + " palindromes!");
+		int i=0;
+		while (i<n) {
+			System.out.println("Palindrome " + (i+1) + ":");
+			String word = board.next();
+			testPalindrome(word);
+			i++;
+		}
+		
 	}
 	
 	
